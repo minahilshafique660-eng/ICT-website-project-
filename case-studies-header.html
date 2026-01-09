@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies - LAZAREV. Digital Product Design Agency</title>
+    <link rel="shortcut icon" href="https://assets-global.website-files.com/64a2ab71942e1d57feb6fe39/6528221f95333ff155d01ad2_fav.gif" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header-styles.css">
+    <style>
+        .case-studies-header {
+            background: linear-gradient(135deg, rgba(11, 163, 78, 0.1), rgba(17, 17, 17, 1));
+            min-height: 70vh;
+            padding: 10rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .case-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(11, 163, 78, 0.15);
+            border: 1px solid rgba(11, 163, 78, 0.3);
+            border-radius: 20px;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #0BA34E;
+            margin-bottom: 2rem;
+        }
+
+        .case-hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .case-hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        .case-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .case-stat-item {
+            text-align: center;
+        }
+
+        .case-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0BA34E 0%, #4f5bff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .case-grid {
+            padding: 6rem 2rem;
+            background: #111;
+        }
+
+        .case-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .case-filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .case-filter-btn.active,
+        .case-filter-btn:hover {
+            background: rgba(11, 163, 78, 0.2);
+            border-color: rgba(11, 163, 78, 0.3);
+            color: #0BA34E;
+        }
+
+        .case-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .case-card {
+            background: rgba(25, 25, 25, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(11, 163, 78, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .case-card-header {
+            padding: 2rem 2rem 1rem;
+        }
+
+        .case-category {
+            display: inline-block;
+            background: rgba(11, 163, 78, 0.2);
+            color: #0BA34E;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .case-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .case-card-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .case-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .case-card:hover .case-card-image img {
+            transform: scale(1.05);
+        }
+
+        .case-card-footer {
+            padding: 1.5rem 2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .case-card-stats {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .case-card-stat {
+            text-align: center;
+        }
+
+        .case-card-stat .number {
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0BA34E;
+            margin-bottom: 0.25rem;
+        }
+
+        .case-card-stat .label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .case-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #0BA34E;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: gap 0.3s ease;
+        }
+
+        .case-link:hover {
+            gap: 0.75rem;
+        }
+
+        .case-cta {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(11, 163, 78, 0.1), rgba(17, 17, 17, 1));
+            text-align: center;
+        }
+
+        .case-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .case-cta p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .case-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .case-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .case-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .case-grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .case-card-footer {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: flex-start;
+            }
+
+            .case-cta-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
+            margin: 5% auto;
+            padding: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-header {
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            margin: 0;
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-category {
+            display: inline-block;
+            background: rgba(11, 163, 78, 0.2);
+            color: #0BA34E;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .modal-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .modal-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .modal-detail-item {
+            text-align: center;
+        }
+
+        .modal-detail-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0BA34E 0%, #4f5bff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-detail-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .modal-features {
+            margin-top: 2rem;
+        }
+
+        .modal-features h4 {
+            color: #0BA34E;
+            margin-bottom: 1rem;
+        }
+
+        .modal-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-features li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .modal-features li::before {
+            content: "✓";
+            color: #0BA34E;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Professional Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="index.html" class="brand-logo">
+                    <div class="logo-wrapper">
+                        <span class="logo-main">LAZAREV</span>
+                        <span class="logo-dot">.</span>
+                        <div class="logo-badge">
+                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                <path fill="currentColor" d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="logo-tagline">Case Studies</span>
+                </a>
+            </div>
+
+            <!-- Main Navigation -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-home-4-line"></i></span>
+                            <span class="nav-text">Home</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="case-studies-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-folders-line"></i></span>
+                            <span class="nav-text">Case Studies</span>
+                            <span class="nav-badge">12</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                        <div class="nav-dropdown mega-menu">
+                            <div class="mega-menu-container">
+                                <div class="mega-menu-section">
+                                    <h4>Industries</h4>
+                                    <ul>
+                                        <li><a href="#ai"><i class="ri-brain-line"></i>AI & ML</a></li>
+                                        <li><a href="#fintech"><i class="ri-line-chart-line"></i>Fintech</a></li>
+                                        <li><a href="#web3"><i class="ri-link-m"></i>Web 3.0</a></li>
+                                        <li><a href="#ecommerce"><i class="ri-shopping-cart-line"></i>E-commerce</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-section">
+                                    <h4>Featured</h4>
+                                    <ul>
+                                        <li><a href="#featured" class="featured-case">
+                                            <div class="case-preview">
+                                                <img src="https://assets-global.website-files.com/64a5e6675a4159253d0ee3e0/65a93ac90b586168e5917ac8_Rhea%20-%20cover_horizontal_low.webp" alt="Accern Rhea">
+                                                <div class="case-info">
+                                                    <strong>Accern • Rhea</strong>
+                                                    <span>AI-Powered Financial Analytics</span>
+                                                </div>
+                                            </div>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="expertise-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-lightbulb-flash-line"></i></span>
+                            <span class="nav-text">Expertise</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="uiux-design-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-palette-line"></i></span>
+                            <span class="nav-text">UI/UX Design</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="product-design-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-cpu-line"></i></span>
+                            <span class="nav-text">Product Design</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="contact.html" class="contact-btn">
+                    <span>Contact</span>
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
+                <button class="header-cta" id="headerCta">
+                    <span>Start Project</span>
+                    <i class="ri-flashlight-line"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb-nav">
+            <div class="breadcrumb-container">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Case Studies</li>
+                    </ol>
+                </nav>
+                <div class="breadcrumb-actions">
+                    <button class="scroll-top" aria-label="Scroll to top">
+                        <i class="ri-arrow-up-line"></i>
+                    </button>
+                    <div class="current-time">
+                        <i class="ri-time-line"></i>
+                        <span id="currentTime"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay"></div>
+    <nav class="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="mobile-logo">LAZAREV.</a>
+            <button class="mobile-menu-close">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav">
+                <li><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
+                <li><a href="case-studies-header.html" class="active"><i class="ri-folders-line"></i> Case Studies</a></li>
+                <li><a href="expertise-header.html"><i class="ri-lightbulb-flash-line"></i> Expertise</a></li>
+                <li><a href="uiux-design-header.html"><i class="ri-palette-line"></i> UI/UX Design</a></li>
+                <li><a href="product-design-header.html"><i class="ri-cpu-line"></i> Product Design</a></li>
+                <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <a href="contact.html" class="mobile-cta">Start a Project</a>
+                <div class="mobile-social">
+                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                    <a href="#"><i class="ri-linkedin-fill"></i></a>
+                    <a href="#"><i class="ri-dribbble-fill"></i></a>
+                    <a href="#"><i class="ri-behance-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="main">
+        <!-- Case Studies Header -->
+        <section class="case-studies-header">
+            <div class="case-hero">
+                <div class="case-badge">
+                    <i class="ri-award-fill"></i>
+                    Award-Winning Projects
+                </div>
+                <h1>Our Case Studies</h1>
+                <p>Explore our portfolio of transformative digital product designs that have driven business growth, improved user experiences, and delivered measurable results for clients across industries.</p>
+                <div class="case-stats">
+                    <div class="case-stat-item">
+                        <div class="case-stat-number">150+</div>
+                        <div class="case-stat-label">Projects Completed</div>
+                    </div>
+                    <div class="case-stat-item">
+                        <div class="case-stat-number">98%</div>
+                        <div class="case-stat-label">Client Satisfaction</div>
+                    </div>
+                    <div class="case-stat-item">
+                        <div class="case-stat-number">45+</div>
+                        <div class="case-stat-label">Industry Awards</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies Filter -->
+        <section class="case-grid">
+            <div class="container">
+                <div class="case-filters">
+                    <button class="case-filter-btn active" data-filter="all">All Projects</button>
+                    <button class="case-filter-btn" data-filter="ai">AI & ML</button>
+                    <button class="case-filter-btn" data-filter="fintech">Fintech</button>
+                    <button class="case-filter-btn" data-filter="web3">Web 3.0</button>
+                    <button class="case-filter-btn" data-filter="ecommerce">E-commerce</button>
+                    <button class="case-filter-btn" data-filter="saas">SaaS</button>
+                </div>
+
+                <div class="case-grid-container">
+                    <!-- Case Study 1 -->
+                    <div id="accern-rhea" class="case-card" data-category="ai">
+                        <div class="case-card-header">
+                            <span class="case-category">AI & ML</span>
+                            <h3>Accern • Rhea</h3>
+                            <p>AI-powered financial analytics platform revolutionizing investment research with machine learning insights.</p>
+                        </div>
+                        <div class="case-card-image">
+                            <img src="https://assets-global.website-files.com/64a5e6675a4159253d0ee3e0/65a93ac90b586168e5917ac8_Rhea%20-%20cover_horizontal_low.webp" alt="Accern Rhea">
+                        </div>
+                        <div class="case-card-footer">
+                            <div class="case-card-stats">
+                                <div class="case-card-stat">
+                                    <span class="number">300%</span>
+                                    <span class="label">Engagement</span>
+                                </div>
+                                <div class="case-card-stat">
+                                    <span class="number">65%</span>
+                                    <span class="label">Time Saved</span>
+                                </div>
+                            </div>
+                            <a href="#accern-rhea" class="case-link">
+                                View Case <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 2 -->
+                    <div id="afrotech-platform" class="case-card" data-category="fintech">
+                        <div class="case-card-header">
+                            <span class="case-category">Fintech</span>
+                            <h3>AfroTech Platform</h3>
+                            <p>Inclusive fintech solution for emerging markets with seamless payment processing.</p>
+                        </div>
+                        <div class="case-card-image">
+                            <img src="https://assets-global.website-files.com/64a5e6675a4159253d0ee3e0/65cb66041ce86ac3784aaba1_Afrotech%20-%20cover_horizontal.webp" alt="AfroTech">
+                        </div>
+                        <div class="case-card-footer">
+                            <div class="case-card-stats">
+                                <div class="case-card-stat">
+                                    <span class="number">250%</span>
+                                    <span class="label">User Growth</span>
+                                </div>
+                                <div class="case-card-stat">
+                                    <span class="number">45%</span>
+                                    <span class="label">Conversion Rate</span>
+                                </div>
+                            </div>
+                            <a href="#" class="case-link">
+                                View Case <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 3 -->
+                    <div id="nft-marketplace" class="case-card" data-category="web3">
+                        <div class="case-card-header">
+                            <span class="case-category">Web 3.0</span>
+                            <h3>NFT Marketplace</h3>
+                            <p>Decentralized NFT trading platform with creator tools and community features.</p>
+                        </div>
+                        <div class="case-card-image">
+                            <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2032&q=80" alt="NFT Marketplace">
+                        </div>
+                        <div class="case-card-footer">
+                            <div class="case-card-stats">
+                                <div class="case-card-stat">
+                                    <span class="number">500K+</span>
+                                    <span class="label">Users</span>
+                                </div>
+                                <div class="case-card-stat">
+                                    <span class="number">$10M+</span>
+                                    <span class="label">Volume</span>
+                                </div>
+                            </div>
+                            <a href="#" class="case-link">
+                                View Case <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 4 -->
+                    <div id="luxestore-platform" class="case-card" data-category="ecommerce">
+                        <div class="case-card-header">
+                            <span class="case-category">E-commerce</span>
+                            <h3>LuxeStore Platform</h3>
+                            <p>Premium e-commerce with AR visualization and AI recommendations.</p>
+                        </div>
+                        <div class="case-card-image">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="LuxeStore">
+                        </div>
+                        <div class="case-card-footer">
+                            <div class="case-card-stats">
+                                <div class="case-card-stat">
+                                    <span class="number">45%</span>
+                                    <span class="label">Sales Increase</span>
+                                </div>
+                                <div class="case-card-stat">
+                                    <span class="number">70%</span>
+                                    <span class="label">Reduced Returns</span>
+                                </div>
+                            </div>
+                            <a href="#" class="case-link">
+                                View Case <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 5 -->
+                    <div id="neurotech-ai" class="case-card" data-category="ai">
+                        <div class="case-card-header">
+                            <span class="case-category">AI & ML</span>
+                            <h3>NeuroTech AI</h3>
+                            <p>Healthcare diagnostics platform with advanced ML visualization tools.</p>
+                        </div>
+                        <div class="case-card-image">
+                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="NeuroTech AI">
+                        </div>
+                        <div class="case-card-footer">
+                            <div class="case-card-stats">
+                                <div class="case-card-stat">
+                                    <span class="number">95%</span>
+                                    <span class="label">Accuracy</span>
+                                </div>
+                                <div class="case-card-stat">
+                                    <span class="number">40%</span>
+                                    <span class="label">Faster Diagnosis</span>
+                                </div>
+                            </div>
+                            <a href="#" class="case-link">
+                                View Case <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 6 -->
+                    <div id="datamind-analytics" class="case-card" data-category="saas">
+                        <div class="case-card-header">
+                            <span class="case-category">SaaS</span>
+                            <h3>DataMind Analytics</h3>
+                            <p>Enterprise analytics solution with custom AI models and real-time reporting.</p>
+                        </div>
+                        <div class="case-card-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="DataMind">
+                        </div>
+                        <div class="case-card-footer">
+                            <div class="case-card-stats">
+                                <div class="case-card-stat">
+                                    <span class="number">3x</span>
+                                    <span class="label">Efficiency</span>
+                                </div>
+                                <div class="case-card-stat">
+                                    <span class="number">85%</span>
+                                    <span class="label">Adoption Rate</span>
+                                </div>
+                            </div>
+                            <a href="#" class="case-link">
+                                View Case <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="case-cta">
+            <div class="container">
+                <h2>Ready to Transform Your Product?</h2>
+                <p>Let's create a case study that showcases your success story. Our design expertise can help you achieve remarkable results.</p>
+                <div class="case-cta-buttons">
+                    <a href="contact.html" class="btn-primary large">
+                        <span>Start Your Project</span>
+                        <i class="ri-flashlight-fill"></i>
+                    </a>
+                    <a href="expertise-header.html" class="btn-secondary large">
+                        <span>View Our Expertise</span>
+                        <i class="ri-lightbulb-flash-line"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+     <footer class="main-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <a href="index.html" class="footer-logo">LAZAREV.</a>
+                        <p class="footer-tagline">Digital Product Design Agency</p>
+                        <p class="footer-description">Transforming ideas into exceptional digital experiences through strategic design and innovation.</p>
+                        <div class="footer-social">
+                            <a href="https://twitter.com/lazarevagency" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-twitter-fill"></i></a>
+                            <a href="https://www.linkedin.com/company/lazarev-agency" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill"></i></a>
+                            <a href="https://dribbble.com/lazarev" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-dribbble-fill"></i></a>
+                            <a href="https://www.behance.net/lazarev" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-behance-fill"></i></a>
+                            <a href="https://www.instagram.com/lazarev.agency" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-fill"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="uiux-design-header.html">UI/UX Design</a></li>
+                            <li><a href="product-design-header.html">Product Design</a></li>
+                            <li><a href="expertise-header.html#ai">AI & ML Design</a></li>
+                            <li><a href="expertise-header.html#fintech">Fintech Solutions</a></li>
+                            <li><a href="expertise-header.html#web3">Web 3.0 Design</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="case-studies-header.html">Case Studies</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                     
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <div class="contact-info">
+                            <p><i class="ri-mail-line"></i> hello@lazarev.agency</p>
+                            <p><i class="ri-phone-line"></i> +1 (415) 555-0139</p>
+                            <p><i class="ri-map-pin-line"></i> San Francisco, CA</p>
+                        </div>
+                        <div class="newsletter">
+                            <h5>Stay Updated</h5>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="Your email address">
+                                <button type="submit">
+                                    <i class="ri-send-plane-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2024 LAZAREV. All rights reserved.</p>
+                 
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-container">
+            <button class="modal-close">
+                <i class="ri-close-line"></i>
+            </button>
+            <div class="modal-content">
+                <h2>Start Your Project</h2>
+                <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Company">
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Project Type</option>
+                            <option value="uiux">UI/UX Design</option>
+                            <option value="product">Product Design</option>
+                            <option value="ai">AI & ML</option>
+                            <option value="fintech">Fintech</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us about your project..." rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox">
+                            <input type="checkbox" required>
+                            <span>I agree to receive updates and marketing communications</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <i class="ri-send-plane-fill"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- Case Study Modal -->
+    <div id="caseModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <span id="modalCategory" class="modal-category"></span>
+                <p id="modalDescription" class="modal-description"></p>
+                <div class="modal-details">
+                    <div class="modal-detail-item">
+                        <div id="modalStat1" class="modal-detail-number"></div>
+                        <div id="modalStat1Label" class="modal-detail-label"></div>
+                    </div>
+                    <div class="modal-detail-item">
+                        <div id="modalStat2" class="modal-detail-number"></div>
+                        <div id="modalStat2Label" class="modal-detail-label"></div>
+                    </div>
+                </div>
+                <img id="modalImage" class="modal-image" src="" alt="">
+                <div class="modal-features">
+                    <h4>Key Features</h4>
+                    <ul id="modalFeatures"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+    <script src="header-script.js"></script>
+    <script>
+        // Case Studies Filter
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.case-filter-btn');
+            const caseCards = document.querySelectorAll('.case-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    // Show/hide cards based on filter
+                    caseCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            gsap.to(card, {
+                                opacity: 1,
+                                scale: 1,
+                                duration: 0.5,
+                                ease: "power2.out"
+                            });
+                        } else {
+                            gsap.to(card, {
+                                opacity: 0,
+                                scale: 0.8,
+                                duration: 0.5,
+                                ease: "power2.in",
+                                onComplete: () => {
+                                    card.style.display = 'none';
+                                }
+                            });
+                        }
+                    });
+                });
+            });
+
+            // Modal functionality
+            const caseLinks = document.querySelectorAll('.case-link');
+            const modal = document.getElementById('caseModal');
+
+            caseLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const card = this.closest('.case-card');
+                    openModal(card);
+                });
+            });
+
+            // Close modal when clicking outside or on close button
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal || e.target.classList.contains('modal-close')) {
+                    closeModal();
+                }
+            });
+
+            // Close modal on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    closeModal();
+                }
+            });
+        });
+
+        function openModal(card) {
+            const modal = document.getElementById('caseModal');
+            const title = card.querySelector('h3').textContent;
+            const category = card.querySelector('.case-category').textContent;
+            const description = card.querySelector('p').textContent;
+            const imageSrc = card.querySelector('img').src;
+            const stats = card.querySelectorAll('.case-card-stat');
+
+            // Populate modal
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalCategory').textContent = category;
+            document.getElementById('modalDescription').textContent = description;
+            document.getElementById('modalImage').src = imageSrc;
+
+            // Populate stats
+            if (stats.length >= 2) {
+                document.getElementById('modalStat1').textContent = stats[0].querySelector('.number').textContent;
+                document.getElementById('modalStat1Label').textContent = stats[0].querySelector('.label').textContent;
+                document.getElementById('modalStat2').textContent = stats[1].querySelector('.number').textContent;
+                document.getElementById('modalStat2Label').textContent = stats[1].querySelector('.label').textContent;
+            }
+
+            // Populate features based on category
+            const featuresList = document.getElementById('modalFeatures');
+            featuresList.innerHTML = '';
+
+            const features = getFeaturesForCategory(category);
+            features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+
+            // Show modal
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('caseModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        function getFeaturesForCategory(category) {
+            const featuresMap = {
+                'AI & ML': [
+                    'Machine Learning Algorithms',
+                    'Real-time Data Processing',
+                    'Predictive Analytics',
+                    'Automated Insights',
+                    'Scalable AI Infrastructure'
+                ],
+                'Fintech': [
+                    'Secure Payment Processing',
+                    'Financial Data Analytics',
+                    'Regulatory Compliance',
+                    'Real-time Transactions',
+                    'Risk Assessment Tools'
+                ],
+                'Web 3.0': [
+                    'Blockchain Integration',
+                    'Decentralized Architecture',
+                    'Smart Contracts',
+                    'NFT Support',
+                    'Cryptocurrency Wallets'
+                ],
+                'E-commerce': [
+                    'AR Product Visualization',
+                    'AI Recommendations',
+                    'Inventory Management',
+                    'Multi-channel Integration',
+                    'Personalized Shopping'
+                ],
+                'SaaS': [
+                    'Cloud Infrastructure',
+                    'Multi-tenant Architecture',
+                    'Real-time Analytics',
+                    'API Integrations',
+                    'Automated Workflows'
+                ]
+            };
+
+            return featuresMap[category] || [
+                'Custom Development',
+                'Scalable Architecture',
+                'User-Centric Design',
+                'Performance Optimization',
+                'Cross-platform Compatibility'
+            ];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Design - LAZAREV. Digital Product Design Agency</title>
+    <link rel="shortcut icon" href="https://assets-global.website-files.com/64a2ab71942e1d57feb6fe39/6528221f95333ff155d01ad2_fav.gif" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header-styles.css">
+    <style>
+        .uiux-header {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, var(--bg-primary) 100%);
+            min-height: 70vh;
+            padding: 4rem 2rem 4rem;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .uiux-hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .uiux-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            border-radius: 20px;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ff6b6b;
+            margin-bottom: 2rem;
+        }
+
+        .uiux-hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .uiux-hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        .uiux-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .uiux-stat-item {
+            text-align: center;
+        }
+
+        .uiux-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa36c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .uiux-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .uiux-services {
+            padding: 6rem 2rem;
+            background: var(--bg-secondary);
+        }
+
+        .service-tabs {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-tab-header {
+            display: flex;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+        }
+
+        .service-tab-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1.5rem 2rem;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            min-width: 200px;
+        }
+
+        .service-tab-btn.active {
+            color: #ff6b6b;
+            background: rgba(255, 107, 107, 0.1);
+        }
+
+        .service-tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #ff6b6b;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-tab-btn.active::after {
+            transform: scaleX(1);
+        }
+
+        .service-tab-content {
+            padding: 3rem;
+            display: none;
+        }
+
+        .service-tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+
+        .service-card-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #ff6b6b;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            color: #ff6b6b;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .service-card-btn:hover {
+            background: rgba(255, 107, 107, 0.2);
+            border-color: rgba(255, 107, 107, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-features li {
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-features li i {
+            color: #ff6b6b;
+            font-size: 0.9rem;
+        }
+
+        .uiux-process {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(17, 17, 17, 1));
+        }
+
+        .process-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .process-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .process-step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa36c 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+            margin-right: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-step-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .process-step-content h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #fff;
+        }
+
+        .process-step-content p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+        }
+
+        .step-duration {
+            display: inline-block;
+            background: rgba(255, 107, 107, 0.1);
+            color: #ff6b6b;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .process-connector {
+            position: absolute;
+            left: 30px;
+            top: 60px;
+            bottom: -3rem;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1;
+        }
+
+        .process-step:last-child .process-connector {
+            display: none;
+        }
+
+        .uiux-showcase {
+            padding: 6rem 2rem;
+            background: #111;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .showcase-card {
+            background: rgba(25, 25, 25, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .showcase-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 107, 107, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .showcase-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .showcase-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .showcase-card:hover .showcase-image img {
+            transform: scale(1.05);
+        }
+
+        .showcase-content {
+            padding: 1.5rem;
+        }
+
+        .showcase-content h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .showcase-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .showcase-tag {
+            display: inline-block;
+            background: rgba(255, 107, 107, 0.1);
+            color: #ff6b6b;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .uiux-cta {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(17, 17, 17, 1));
+            text-align: center;
+        }
+
+        .uiux-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .uiux-cta p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .uiux-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .uiux-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .service-tab-header {
+                flex-direction: column;
+            }
+
+            .service-tab-btn {
+                min-width: 100%;
+            }
+
+            .process-step {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .process-step-number {
+                margin-bottom: 1rem;
+                margin-right: 0;
+            }
+
+            .process-connector {
+                left: 30px;
+                top: 60px;
+                bottom: -3rem;
+            }
+
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .uiux-cta h2 {
+                font-size: 2.25rem;
+            }
+        }
+
+        /* UI/UX Modal Styles */
+        .uiux-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .uiux-modal-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            cursor: pointer;
+        }
+
+        .uiux-modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
+            margin: 5% auto;
+            padding: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .uiux-modal-header {
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .uiux-modal-title {
+            font-size: 2rem;
+            margin: 0;
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .uiux-modal-close {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .uiux-modal-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .uiux-modal-body {
+            padding: 2rem;
+        }
+
+        .uiux-modal-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .uiux-modal-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .uiux-modal-detail-item {
+            text-align: center;
+        }
+
+        .uiux-modal-detail-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa36c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .uiux-modal-detail-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .uiux-modal-features {
+            margin-top: 2rem;
+        }
+
+        .uiux-modal-features h4 {
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .uiux-modal-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .uiux-modal-features li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .uiux-modal-features li::before {
+            content: "✓";
+            color: #ff6b6b;
+            position: absolute;
+            left: 0;
+        }
+
+        .uiux-modal-process {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .uiux-modal-process h4 {
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .uiux-modal-process ol {
+            list-style: none;
+            padding: 0;
+            counter-reset: process-counter;
+        }
+
+        .uiux-modal-process li {
+            counter-increment: process-counter;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.75rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .uiux-modal-process li::before {
+            content: counter(process-counter) ".";
+            color: #ff6b6b;
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Professional Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="index.html" class="brand-logo">
+                    <div class="logo-wrapper">
+                        <span class="logo-main">LAZAREV</span>
+                        <span class="logo-dot">.</span>
+                        <div class="logo-badge">
+                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                <path fill="currentColor" d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="logo-tagline">UI/UX Design</span>
+                </a>
+            </div>
+
+            <!-- Main Navigation -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-home-4-line"></i></span>
+                            <span class="nav-text">Home</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="case-studies-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-folders-line"></i></span>
+                            <span class="nav-text">Case Studies</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="expertise-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-lightbulb-flash-line"></i></span>
+                            <span class="nav-text">Expertise</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="uiux-design-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-palette-line"></i></span>
+                            <span class="nav-text">UI/UX Design</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="#research"><i class="ri-search-eye-line"></i>UX Research</a></li>
+                                <li><a href="#design"><i class="ri-layout-3-line"></i>UI Design</a></li>
+                                <li><a href="#prototyping"><i class="ri-slideshow-line"></i>Prototyping</a></li>
+                                <li><a href="#testing"><i class="ri-flask-line"></i>Usability Testing</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="product-design-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-cpu-line"></i></span>
+                            <span class="nav-text">Product Design</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="contact.html" class="contact-btn">
+                    <span>Contact</span>
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
+                <button class="header-cta" id="headerCta">
+                    <span>Start Project</span>
+                    <i class="ri-flashlight-line"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb-nav">
+            <div class="breadcrumb-container">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">UI/UX Design</li>
+                    </ol>
+                </nav>
+                <div class="breadcrumb-actions">
+                    <button class="scroll-top" aria-label="Scroll to top">
+                        <i class="ri-arrow-up-line"></i>
+                    </button>
+                    <div class="current-time">
+                        <i class="ri-time-line"></i>
+                        <span id="currentTime"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay"></div>
+    <nav class="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="mobile-logo">LAZAREV.</a>
+            <button class="mobile-menu-close">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav">
+                <li><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
+                <li><a href="case-studies-header.html"><i class="ri-folders-line"></i> Case Studies</a></li>
+                <li><a href="expertise-header.html"><i class="ri-lightbulb-flash-line"></i> Expertise</a></li>
+                <li><a href="uiux-design-header.html" class="active"><i class="ri-palette-line"></i> UI/UX Design</a></li>
+                <li><a href="product-design-header.html"><i class="ri-cpu-line"></i> Product Design</a></li>
+                <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <a href="contact.html" class="mobile-cta">Start a Project</a>
+                <div class="mobile-social">
+                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                    <a href="#"><i class="ri-linkedin-fill"></i></a>
+                    <a href="#"><i class="ri-dribbble-fill"></i></a>
+                    <a href="#"><i class="ri-behance-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="main">
+        <!-- UI/UX Design Header -->
+        <section class="uiux-header">
+            <div class="uiux-hero">
+                <div class="uiux-badge">
+                    <i class="ri-award-fill"></i>
+                    Award-Winning Design
+                </div>
+                <h1>UI/UX Design Excellence</h1>
+                <p>Creating intuitive, beautiful, and effective digital experiences that users love. We combine human-centered design with cutting-edge technology to deliver exceptional results.</p>
+                <div class="uiux-stats">
+                    <div class="uiux-stat-item">
+                        <div class="uiux-stat-number">98%</div>
+                        <div class="uiux-stat-label">User Satisfaction</div>
+                    </div>
+                    <div class="uiux-stat-item">
+                        <div class="uiux-stat-number">45%</div>
+                        <div class="uiux-stat-label">Conversion Increase</div>
+                    </div>
+                    <div class="uiux-stat-item">
+                        <div class="uiux-stat-number">150+</div>
+                        <div class="uiux-stat-label">Projects Completed</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UI/UX Services -->
+        <section class="uiux-services" id="research">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 class="section-title">Our UI/UX Services</h2>
+                    <p class="section-subtitle">Comprehensive design services from research to implementation</p>
+                </div>
+
+                <div class="service-tabs">
+                    <div class="service-tab-header">
+                        <button class="service-tab-btn active" data-tab="research">
+                            <i class="ri-search-eye-line"></i>
+                            <span>UX Research</span>
+                        </button>
+                        <button class="service-tab-btn" data-tab="design">
+                            <i class="ri-layout-3-line"></i>
+                            <span>UI Design</span>
+                        </button>
+                     
+                    </div>
+
+                    <!-- Research Tab -->
+                    <div class="service-tab-content active" id="research-tab">
+                        <div class="service-grid">
+                            <div class="service-card">
+                                <div class="service-card-icon">
+                                    <i class="ri-user-search-line"></i>
+                                </div>
+                                <h4>User Research</h4>
+                                <p>In-depth understanding of your users through interviews, surveys, and behavioral analysis.</p>
+                                <ul class="service-features">
+                                    <li><i class="ri-check-line"></i> User Interviews</li>
+                                    <li><i class="ri-check-line"></i> Surveys & Questionnaires</li>
+                                    <li><i class="ri-check-line"></i> Persona Development</li>
+                                    <li><i class="ri-check-line"></i> Journey Mapping</li>
+                                </ul>
+                                <button class="service-card-btn" type="button" onclick="openUiuxModal(serviceData['User Research'])">
+                                    <span>Learn More</span>
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-card-icon">
+                                    <i class="ri-bar-chart-line"></i>
+                                </div>
+                                <h4>Competitive Analysis</h4>
+                                <p>Comprehensive analysis of market competitors to identify opportunities and best practices.</p>
+                                <ul class="service-features">
+                                    <li><i class="ri-check-line"></i> Market Research</li>
+                                    <li><i class="ri-check-line"></i> Feature Analysis</li>
+                                    <li><i class="ri-check-line"></i> SWOT Analysis</li>
+                                    <li><i class="ri-check-line"></i> Gap Analysis</li>
+                                </ul>
+                                <button class="service-card-btn" type="button" onclick="openUiuxModal(serviceData['Competitive Analysis'])">
+                                    <span>Learn More</span>
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-card-icon">
+                                    <i class="ri-focus-2-line"></i>
+                                </div>
+                                <h4>Information Architecture</h4>
+                                <p>Structuring information and navigation for optimal usability and findability.</p>
+                                <ul class="service-features">
+                                    <li><i class="ri-check-line"></i> Site Mapping</li>
+                                    <li><i class="ri-check-line"></i> Card Sorting</li>
+                                    <li><i class="ri-check-line"></i> Taxonomy Development</li>
+                                    <li><i class="ri-check-line"></i> Navigation Design</li>
+                                </ul>
+                                <button class="service-card-btn" type="button" onclick="openUiuxModal(serviceData['Information Architecture'])">
+                                    <span>Learn More</span>
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Design Tab -->
+                    <div class="service-tab-content" id="design-tab">
+                        <div class="service-grid">
+                            <div class="service-card">
+                                <div class="service-card-icon">
+                                    <i class="ri-palette-line"></i>
+                                </div>
+                                <h4>Visual Design</h4>
+                                <p>Creating beautiful, consistent visual interfaces that reflect your brand identity.</p>
+                                <ul class="service-features">
+                                    <li><i class="ri-check-line"></i> Visual Identity</li>
+                                    <li><i class="ri-check-line"></i> Color Systems</li>
+                                    <li><i class="ri-check-line"></i> Typography</li>
+                                    <li><i class="ri-check-line"></i> Icon Design</li>
+                                </ul>
+                                <button class="service-card-btn" type="button" onclick="openUiuxModal(serviceData['Visual Design'])">
+                                    <span>Learn More</span>
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-card-icon">
+                                    <i class="ri-layout-line"></i>
+                                </div>
+                                <h4>Design Systems</h4>
+                                <p>Building scalable design systems for consistency and efficiency across products.</p>
+                                <ul class="service-features">
+                                    <li><i class="ri-check-line"></i> Component Libraries</li>
+                                    <li><i class="ri-check-line"></i> Style Guides</li>
+                                    <li><i class="ri-check-line"></i> Design Tokens</li>
+                                    <li><i class="ri-check-line"></i> Documentation</li>
+                                </ul>
+                                <button class="service-card-btn" type="button" onclick="openUiuxModal(serviceData['Design Systems'])">
+                                    <span>Learn More</span>
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-card-icon">
+                                    <i class="ri-hand-line"></i>
+                                </div>
+                                <h4>Interaction Design</h4>
+                                <p>Designing meaningful interactions and micro-interactions that delight users.</p>
+                                <ul class="service-features">
+                                    <li><i class="ri-check-line"></i> Motion Design</li>
+                                    <li><i class="ri-check-line"></i> Animation</li>
+                                    <li><i class="ri-check-line"></i> Gesture Design</li>
+                                    <li><i class="ri-check-line"></i> Feedback Systems</li>
+                                </ul>
+                                <button class="service-card-btn" type="button" onclick="openUiuxModal(serviceData['Interaction Design'])">
+                                    <span>Learn More</span>
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UI/UX Process -->
+        <section class="uiux-process">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 class="section-title">Our UI/UX Design Process</h2>
+                    <p class="section-subtitle">A systematic approach to creating exceptional user experiences</p>
+                </div>
+
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <div class="process-step-number">01</div>
+                        <div class="process-step-content">
+                            <h4>Discovery & Research</h4>
+                            <p>Understanding user needs, business goals, and market context through comprehensive research.</p>
+                            <div class="step-duration">1-2 Weeks</div>
+                        </div>
+                        <div class="process-connector"></div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">02</div>
+                        <div class="process-step-content">
+                            <h4>Strategy & Planning</h4>
+                            <p>Defining user journeys, information architecture, and design strategy based on research insights.</p>
+                            <div class="step-duration">1-2 Weeks</div>
+                        </div>
+                        <div class="process-connector"></div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">03</div>
+                        <div class="process-step-content">
+                            <h4>Wireframing & Prototyping</h4>
+                            <p>Creating low-fidelity wireframes and interactive prototypes to test and validate concepts.</p>
+                            <div class="step-duration">2-3 Weeks</div>
+                        </div>
+                        <div class="process-connector"></div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">04</div>
+                        <div class="process-step-content">
+                            <h4>Visual Design</h4>
+                            <p>Applying visual identity, creating high-fidelity designs, and building design systems.</p>
+                            <div class="step-duration">2-3 Weeks</div>
+                        </div>
+                        <div class="process-connector"></div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">05</div>
+                        <div class="process-step-content">
+                            <h4>Testing & Validation</h4>
+                            <p>Conducting usability testing, gathering feedback, and iterating on designs.</p>
+                            <div class="step-duration">1-2 Weeks</div>
+                        </div>
+                        <div class="process-connector"></div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">06</div>
+                        <div class="process-step-content">
+                            <h4>Implementation & Handoff</h4>
+                            <p>Preparing design specifications, assets, and collaborating with development teams.</p>
+                            <div class="step-duration">1-2 Weeks</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UI/UX Showcase -->
+        <section class="uiux-showcase">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 class="section-title">Design Principles</h2>
+                    <p class="section-subtitle">Core principles that guide our design decisions and approach</p>
+                </div>
+
+                <div class="showcase-grid">
+                    <div class="showcase-card">
+                        <div class="showcase-image">
+                            <img src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="User-Centered Design">
+                        </div>
+                        <div class="showcase-content">
+                            <span class="showcase-tag">Principle</span>
+                            <h4>User-Centered Design</h4>
+                            <p>Putting users at the center of every design decision through research and empathy.</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <div class="showcase-image">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Consistency">
+                        </div>
+                        <div class="showcase-content">
+                            <span class="showcase-tag">Principle</span>
+                            <h4>Consistency & Standards</h4>
+                            <p>Following established patterns and creating predictable, learnable interfaces.</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <div class="showcase-image">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Accessibility">
+                        </div>
+                        <div class="showcase-content">
+                            <span class="showcase-tag">Principle</span>
+                            <h4>Accessibility First</h4>
+                            <p>Designing for all users regardless of ability, ensuring inclusivity and compliance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="uiux-cta">
+            <div class="container">
+                <h2>Transform Your User Experience</h2>
+                <p>Ready to create digital products that users love? Let's design exceptional experiences together.</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-primary large">
+                        <span>Start Design Project</span>
+                        <i class="ri-palette-fill"></i>
+                    </a>
+                    <a href="case-studies-header.html" class="btn-secondary large">
+                        <span>View Design Work</span>
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+         <footer class="main-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <a href="index.html" class="footer-logo">LAZAREV.</a>
+                        <p class="footer-tagline">Digital Product Design Agency</p>
+                        <p class="footer-description">Transforming ideas into exceptional digital experiences through strategic design and innovation.</p>
+                        <div class="footer-social">
+                            <a href="https://twitter.com/lazarevagency" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-twitter-fill"></i></a>
+                            <a href="https://www.linkedin.com/company/lazarev-agency" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill"></i></a>
+                            <a href="https://dribbble.com/lazarev" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-dribbble-fill"></i></a>
+                            <a href="https://www.behance.net/lazarev" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-behance-fill"></i></a>
+                            <a href="https://www.instagram.com/lazarev.agency" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-fill"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="uiux-design-header.html">UI/UX Design</a></li>
+                            <li><a href="product-design-header.html">Product Design</a></li>
+                            <li><a href="expertise-header.html#ai">AI & ML Design</a></li>
+                            <li><a href="expertise-header.html#fintech">Fintech Solutions</a></li>
+                            <li><a href="expertise-header.html#web3">Web 3.0 Design</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="case-studies-header.html">Case Studies</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                     
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <div class="contact-info">
+                            <p><i class="ri-mail-line"></i> hello@lazarev.agency</p>
+                            <p><i class="ri-phone-line"></i> +1 (415) 555-0139</p>
+                            <p><i class="ri-map-pin-line"></i> San Francisco, CA</p>
+                        </div>
+                        <div class="newsletter">
+                            <h5>Stay Updated</h5>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="Your email address">
+                                <button type="submit">
+                                    <i class="ri-send-plane-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2024 LAZAREV. All rights reserved.</p>
+                 
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-container">
+            <button class="modal-close">
+                <i class="ri-close-line"></i>
+            </button>
+            <div class="modal-content">
+                <h2>Start Your Project</h2>
+                <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Company">
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Project Type</option>
+                            <option value="uiux">UI/UX Design</option>
+                            <option value="product">Product Design</option>
+                            <option value="ai">AI & ML</option>
+                            <option value="fintech">Fintech</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us about your project..." rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox">
+                            <input type="checkbox" required>
+                            <span>I agree to receive updates and marketing communications</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <i class="ri-send-plane-fill"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- UI/UX Modal -->
+    <div id="uiuxModal" class="uiux-modal">
+        <div class="uiux-modal-background"></div>
+        <div class="uiux-modal-content">
+            <div class="uiux-modal-header">
+                <h2 id="uiuxModalTitle" class="uiux-modal-title">Service Details</h2>
+                <button class="uiux-modal-close" onclick="closeUiuxModal()">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <div class="uiux-modal-body">
+                <p id="uiuxModalDescription" class="uiux-modal-description">Detailed information about this service.</p>
+
+                <div class="uiux-modal-details">
+                    <div class="uiux-modal-detail-item">
+                        <div id="uiuxModalStat1" class="uiux-modal-detail-number">98%</div>
+                        <div id="uiuxModalLabel1" class="uiux-modal-detail-label">Success Rate</div>
+                    </div>
+                    <div class="uiux-modal-detail-item">
+                        <div id="uiuxModalStat2" class="uiux-modal-detail-number">2-4</div>
+                        <div id="uiuxModalLabel2" class="uiux-modal-detail-label">Weeks Duration</div>
+                    </div>
+                    <div class="uiux-modal-detail-item">
+                        <div id="uiuxModalStat3" class="uiux-modal-detail-number">50+</div>
+                        <div id="uiuxModalLabel3" class="uiux-modal-detail-label">Projects Done</div>
+                    </div>
+                </div>
+
+                <div class="uiux-modal-features">
+                    <h4>Key Features & Deliverables</h4>
+                    <ul id="uiuxModalFeatures">
+                        <li>Feature 1</li>
+                        <li>Feature 2</li>
+                        <li>Feature 3</li>
+                    </ul>
+                </div>
+
+                <div class="uiux-modal-process">
+                    <h4>Process Overview</h4>
+                    <ol id="uiuxModalProcess">
+                        <li>Initial consultation and requirements gathering</li>
+                        <li>Research and analysis phase</li>
+                        <li>Design and prototyping</li>
+                        <li>Testing and validation</li>
+                        <li>Final delivery and handoff</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+    <script src="header-script.js"></script>
+    <script>
+        // Service data for modal - moved to global scope
+        const serviceData = {
+            'User Research': {
+                title: 'User Research',
+                description: 'In-depth understanding of your users through comprehensive research methodologies including interviews, surveys, behavioral analysis, and user testing to uncover insights that drive design decisions.',
+                stats: ['98%', '2-4 Weeks', '150+'],
+                labels: ['Success Rate', 'Duration', 'Projects'],
+                features: [
+                    'User Interviews & Surveys',
+                    'Persona Development',
+                    'User Journey Mapping',
+                    'Behavioral Analysis',
+                    'Usability Testing',
+                    'A/B Testing Setup'
+                ],
+                process: [
+                    'Stakeholder interviews and requirements gathering',
+                    'User research planning and methodology selection',
+                    'Data collection through multiple channels',
+                    'Analysis and insight synthesis',
+                    'Findings presentation and recommendations',
+                    'Research documentation and handoff'
+                ]
+            },
+            'Competitive Analysis': {
+                title: 'Competitive Analysis',
+                description: 'Comprehensive analysis of market competitors to identify opportunities, best practices, and strategic advantages for your product positioning and feature development.',
+                stats: ['95%', '1-3 Weeks', '200+'],
+                labels: ['Accuracy Rate', 'Duration', 'Analyses'],
+                features: [
+                    'Market Research & Trends',
+                    'Competitor Feature Analysis',
+                    'SWOT Analysis',
+                    'Gap Analysis',
+                    'Opportunity Identification',
+                    'Strategic Recommendations'
+                ],
+                process: [
+                    'Competitor identification and selection',
+                    'Feature and functionality analysis',
+                    'Market positioning assessment',
+                    'Trend analysis and forecasting',
+                    'Strategic insights development',
+                    'Actionable recommendations delivery'
+                ]
+            },
+            'Information Architecture': {
+                title: 'Information Architecture',
+                description: 'Strategic organization and structuring of information and navigation systems to ensure optimal usability, findability, and user experience across all digital touchpoints.',
+                stats: ['97%', '2-3 Weeks', '120+'],
+                labels: ['User Satisfaction', 'Duration', 'Projects'],
+                features: [
+                    'Site Mapping & Structure',
+                    'Card Sorting & Taxonomy',
+                    'Navigation Design',
+                    'Content Organization',
+                    'User Flow Optimization',
+                    'Accessibility Compliance'
+                ],
+                process: [
+                    'Content audit and analysis',
+                    'User research and requirements gathering',
+                    'Information architecture design',
+                    'Wireframe development',
+                    'Usability testing and validation',
+                    'Implementation guidelines'
+                ]
+            },
+            'Visual Design': {
+                title: 'Visual Design',
+                description: 'Creating beautiful, consistent visual interfaces that reflect your brand identity while ensuring optimal user experience and conversion through thoughtful design systems.',
+                stats: ['99%', '3-4 Weeks', '180+'],
+                labels: ['Client Satisfaction', 'Duration', 'Projects'],
+                features: [
+                    'Brand Identity Integration',
+                    'Color System Development',
+                    'Typography Hierarchy',
+                    'Icon Design & Libraries',
+                    'Visual Component Design',
+                    'Design System Creation'
+                ],
+                process: [
+                    'Brand guidelines review and analysis',
+                    'Design system planning',
+                    'Visual concept development',
+                    'High-fidelity design creation',
+                    'Design system documentation',
+                    'Developer handoff preparation'
+                ]
+            },
+            'Design Systems': {
+                title: 'Design Systems',
+                description: 'Building scalable, comprehensive design systems that ensure consistency, efficiency, and maintainability across all products and platforms through reusable components.',
+                stats: ['96%', '4-6 Weeks', '80+'],
+                labels: ['Adoption Rate', 'Duration', 'Systems'],
+                features: [
+                    'Component Library Development',
+                    'Style Guide Creation',
+                    'Design Token System',
+                    'Documentation Platform',
+                    'Developer Integration',
+                    'Maintenance & Updates'
+                ],
+                process: [
+                    'Design audit and inventory',
+                    'Component identification and categorization',
+                    'Design token and pattern establishment',
+                    'Component library development',
+                    'Documentation and guidelines',
+                    'Team training and adoption'
+                ]
+            },
+            'Interaction Design': {
+                title: 'Interaction Design',
+                description: 'Designing meaningful interactions and micro-interactions that delight users, enhance usability, and create memorable experiences through thoughtful motion and animation.',
+                stats: ['98%', '2-4 Weeks', '140+'],
+                labels: ['Engagement Rate', 'Duration', 'Projects'],
+                features: [
+                    'Motion Design & Animation',
+                    'Micro-interaction Design',
+                    'Gesture & Touch Design',
+                    'Feedback System Design',
+                    'Transition Design',
+                    'Interactive Prototyping'
+                ],
+                process: [
+                    'Interaction audit and analysis',
+                    'User behavior research',
+                    'Interaction concept development',
+                    'Animation and motion design',
+                    'Prototyping and testing',
+                    'Implementation specifications'
+                ]
+            },
+            'Wireframing': {
+                title: 'Wireframing',
+                description: 'Creating low-fidelity wireframes that establish the basic structure and layout of user interfaces, focusing on content hierarchy and user flow without visual design elements.',
+                stats: ['97%', '1-2 Weeks', '300+'],
+                labels: ['Approval Rate', 'Duration', 'Wireframes'],
+                features: [
+                    'Low-Fidelity Wireframes',
+                    'Content Hierarchy',
+                    'User Flow Mapping',
+                    'Layout Structure',
+                    'Navigation Patterns',
+                    'Responsive Considerations'
+                ],
+                process: [
+                    'Requirements analysis and user flow definition',
+                    'Content inventory and organization',
+                    'Wireframe creation and iteration',
+                    'Stakeholder feedback and revisions',
+                    'Final wireframe delivery',
+                    'Developer handoff preparation'
+                ]
+            },
+            'Interactive Prototyping': {
+                title: 'Interactive Prototyping',
+                description: 'Building high-fidelity, interactive prototypes that simulate the complete user experience, allowing for realistic testing and validation of design concepts.',
+                stats: ['95%', '2-4 Weeks', '180+'],
+                labels: ['User Engagement', 'Duration', 'Prototypes'],
+                features: [
+                    'High-Fidelity Prototypes',
+                    'Interactive Elements',
+                    'User Flow Simulation',
+                    'Micro-interactions',
+                    'Animation & Transitions',
+                    'Cross-platform Compatibility'
+                ],
+                process: [
+                    'Prototype planning and scope definition',
+                    'Interactive element design',
+                    'Animation and transition implementation',
+                    'User testing and feedback collection',
+                    'Iteration and refinement',
+                    'Final prototype delivery'
+                ]
+            },
+            'Usability Testing': {
+                title: 'Usability Testing',
+                description: 'Comprehensive usability testing services to evaluate user experience, identify pain points, and validate design effectiveness through systematic user testing methodologies.',
+                stats: ['96%', '1-3 Weeks', '250+'],
+                labels: ['Issue Detection', 'Duration', 'Tests'],
+                features: [
+                    'Remote & In-Person Testing',
+                    'Task Completion Analysis',
+                    'User Feedback Collection',
+                    'Heatmap Analysis',
+                    'A/B Testing',
+                    'Accessibility Testing'
+                ],
+                process: [
+                    'Test planning and participant recruitment',
+                    'Test scenario development',
+                    'Usability testing execution',
+                    'Data analysis and insights',
+                    'Findings report and recommendations',
+                    'Implementation guidance'
+                ]
+            },
+            'A/B Testing': {
+                title: 'A/B Testing',
+                description: 'Data-driven A/B testing services to optimize user experience and conversion rates through systematic testing of design variations and user interface elements.',
+                stats: ['94%', '2-6 Weeks', '400+'],
+                labels: ['Conversion Lift', 'Duration', 'Tests'],
+                features: [
+                    'Hypothesis Development',
+                    'Test Design & Setup',
+                    'Statistical Analysis',
+                    'Performance Monitoring',
+                    'Iterative Optimization',
+                    'Reporting & Insights'
+                ],
+                process: [
+                    'Goal definition and hypothesis creation',
+                    'Test design and implementation',
+                    'Traffic allocation and monitoring',
+                    'Data collection and analysis',
+                    'Results interpretation',
+                    'Recommendations and next steps'
+                ]
+            }
+        };
+
+        // Tab Switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.service-tab-btn');
+            const tabContents = document.querySelectorAll('.service-tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                });
+            });
+
+            // UI/UX Modal Functionality
+            const modal = document.getElementById('uiuxModal');
+            const modalBackground = modal.querySelector('.uiux-modal-background');
+            const modalContent = modal.querySelector('.uiux-modal-content');
+
+            // Close modal when clicking on background
+            modalBackground.addEventListener('click', closeUiuxModal);
+
+            // Prevent closing when clicking on content
+            modalContent.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+
+            // Close modal on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    closeUiuxModal();
+                }
+            });
+        });
+
+        // Open UI/UX Modal
+        function openUiuxModal(data) {
+            const modal = document.getElementById('uiuxModal');
+            const title = document.getElementById('uiuxModalTitle');
+            const description = document.getElementById('uiuxModalDescription');
+            const stat1 = document.getElementById('uiuxModalStat1');
+            const label1 = document.getElementById('uiuxModalLabel1');
+            const stat2 = document.getElementById('uiuxModalStat2');
+            const label2 = document.getElementById('uiuxModalLabel2');
+            const stat3 = document.getElementById('uiuxModalStat3');
+            const label3 = document.getElementById('uiuxModalLabel3');
+            const features = document.getElementById('uiuxModalFeatures');
+            const process = document.getElementById('uiuxModalProcess');
+
+            // Populate modal content
+            title.textContent = data.title;
+            description.textContent = data.description;
+
+            stat1.textContent = data.stats[0];
+            label1.textContent = data.labels[0];
+            stat2.textContent = data.stats[1];
+            label2.textContent = data.labels[1];
+            stat3.textContent = data.stats[2];
+            label3.textContent = data.labels[2];
+
+            // Clear and populate features
+            features.innerHTML = '';
+            data.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                features.appendChild(li);
+            });
+
+            // Clear and populate process
+            process.innerHTML = '';
+            data.process.forEach(step => {
+                const li = document.createElement('li');
+                li.textContent = step;
+                process.appendChild(li);
+            });
+
+            // Show modal
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        // Close UI/UX Modal
+        function closeUiuxModal() {
+            const modal = document.getElementById('uiuxModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+    </script>
+</body>
+</html>

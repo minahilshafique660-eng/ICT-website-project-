@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Design - LAZAREV. Digital Product Design Agency</title>
+    <link rel="shortcut icon" href="https://assets-global.website-files.com/64a2ab71942e1d57feb6fe39/6528221f95333ff155d01ad2_fav.gif" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header-styles.css">
+    <style>
+        .product-header {
+            background: linear-gradient(135deg, rgba(156, 39, 176, 0.1) 0%, var(--bg-primary) 100%);
+            min-height: 70vh;
+            padding: 4rem 2rem 4rem;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .product-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(156, 39, 176, 0.15);
+            border: 1px solid rgba(156, 39, 176, 0.3);
+            border-radius: 20px;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #9c27b0;
+            margin-bottom: 2rem;
+        }
+
+        .product-hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .product-hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        .product-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .product-stat-item {
+            text-align: center;
+        }
+
+        .product-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #9c27b0 0%, #673ab7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .product-phases {
+            padding: 6rem 2rem;
+            background: var(--bg-secondary);
+        }
+
+        .phase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .phase-card {
+            background: rgba(25, 25, 25, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .phase-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(156, 39, 176, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .phase-number {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #9c27b0 0%, #673ab7 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        .phase-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .phase-card p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .phase-features {
+            list-style: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .phase-features li {
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .phase-features li i {
+            color: #9c27b0;
+            font-size: 1rem;
+        }
+
+        .phase-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #9c27b0;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: gap 0.3s ease;
+        }
+
+        .phase-link:hover {
+            gap: 0.75rem;
+        }
+
+        .product-methodology {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(156, 39, 176, 0.1), rgba(17, 17, 17, 1));
+        }
+
+        .methodology-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .methodology-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .methodology-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .methodology-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(156, 39, 176, 0.1);
+            border: 1px solid rgba(156, 39, 176, 0.2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #9c27b0;
+            margin-right: 2rem;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .methodology-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .methodology-content h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .methodology-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .methodology-connector {
+            position: absolute;
+            left: 32px;
+            top: 64px;
+            bottom: -4rem;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1;
+        }
+
+        .methodology-step:last-child .methodology-connector {
+            display: none;
+        }
+
+        .product-services {
+            padding: 6rem 2rem;
+            background: #111;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(156, 39, 176, 0.3);
+        }
+
+        .service-item h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: #fff;
+        }
+
+        .service-item p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-duration {
+            display: inline-block;
+            background: rgba(156, 39, 176, 0.1);
+            color: #9c27b0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .product-cta {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(156, 39, 176, 0.1), rgba(17, 17, 17, 1));
+            text-align: center;
+        }
+
+        .product-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .product-cta p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin: 5% auto;
+            padding: 0;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .phase-detail h3 {
+            font-size: 1.5rem;
+            color: #9c27b0;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        .phase-detail h3:first-child {
+            margin-top: 0;
+        }
+
+        .phase-detail p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .phase-detail ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .phase-detail li {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .product-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .phase-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .methodology-step {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .methodology-icon {
+                margin-bottom: 1rem;
+                margin-right: 0;
+            }
+
+            .methodology-connector {
+                left: 32px;
+                top: 64px;
+                bottom: -4rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-cta h2 {
+                font-size: 2.25rem;
+            }
+
+            .modal-content {
+                margin: 2% auto;
+                width: 95%;
+                max-height: 90vh;
+            }
+
+            .modal-header {
+                padding: 1.5rem;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Professional Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="index.html" class="brand-logo">
+                    <div class="logo-wrapper">
+                        <span class="logo-main">LAZAREV</span>
+                        <span class="logo-dot">.</span>
+                        <div class="logo-badge">
+                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                <path fill="currentColor" d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="logo-tagline">Product Design</span>
+                </a>
+            </div>
+
+            <!-- Main Navigation -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-home-4-line"></i></span>
+                            <span class="nav-text">Home</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="case-studies-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-folders-line"></i></span>
+                            <span class="nav-text">Case Studies</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="expertise-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-lightbulb-flash-line"></i></span>
+                            <span class="nav-text">Expertise</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="uiux-design-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-palette-line"></i></span>
+                            <span class="nav-text">UI/UX Design</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="product-design-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-cpu-line"></i></span>
+                            <span class="nav-text">Product Design</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="#strategy"><i class="ri-map-pin-line"></i>Product Strategy</a></li>
+                                <li><a href="#development"><i class="ri-tools-line"></i>Development</a></li>
+                                <li><a href="#launch"><i class="ri-rocket-line"></i>Launch & Scale</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="contact.html" class="contact-btn">
+                    <span>Contact</span>
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
+                <button class="header-cta" id="headerCta">
+                    <span>Start Project</span>
+                    <i class="ri-flashlight-line"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb-nav">
+            <div class="breadcrumb-container">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Product Design</li>
+                    </ol>
+                </nav>
+                <div class="breadcrumb-actions">
+                    <button class="scroll-top" aria-label="Scroll to top">
+                        <i class="ri-arrow-up-line"></i>
+                    </button>
+                    <div class="current-time">
+                        <i class="ri-time-line"></i>
+                        <span id="currentTime"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay"></div>
+    <nav class="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="mobile-logo">LAZAREV.</a>
+            <button class="mobile-menu-close">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav">
+                <li><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
+                <li><a href="case-studies-header.html"><i class="ri-folders-line"></i> Case Studies</a></li>
+                <li><a href="expertise-header.html"><i class="ri-lightbulb-flash-line"></i> Expertise</a></li>
+                <li><a href="uiux-design-header.html"><i class="ri-palette-line"></i> UI/UX Design</a></li>
+                <li><a href="product-design-header.html" class="active"><i class="ri-cpu-line"></i> Product Design</a></li>
+                <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <a href="contact.html" class="mobile-cta">Start a Project</a>
+                <div class="mobile-social">
+                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                    <a href="#"><i class="ri-linkedin-fill"></i></a>
+                    <a href="#"><i class="ri-dribbble-fill"></i></a>
+                    <a href="#"><i class="ri-behance-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="main">
+        <!-- Product Design Header -->
+        <section class="product-header">
+            <div class="product-hero">
+                <div class="product-badge">
+                    <i class="ri-rocket-fill"></i>
+                    End-to-End Product Design
+                </div>
+                <h1>Product Design Strategy</h1>
+                <p>From concept to launch and beyond. We design scalable digital products that solve real problems, drive business growth, and deliver exceptional user experiences.</p>
+                <div class="product-stats">
+                    <div class="product-stat-item">
+                        <div class="product-stat-number">200+</div>
+                        <div class="product-stat-label">Products Launched</div>
+                    </div>
+                    <div class="product-stat-item">
+                        <div class="product-stat-number">$500M+</div>
+                        <div class="product-stat-label">Client Funding Raised</div>
+                    </div>
+                    <div class="product-stat-item">
+                        <div class="product-stat-number">85%</div>
+                        <div class="product-stat-label">Product Success Rate</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Design Phases -->
+        <section class="product-phases" id="strategy">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 class="section-title">Product Design Phases</h2>
+                    <p class="section-subtitle">Comprehensive approach to building successful digital products</p>
+                </div>
+
+                <div class="phase-grid">
+                    <!-- Strategy Phase -->
+                    <div class="phase-card">
+                        <div class="phase-number">01</div>
+                        <h3>Product Strategy</h3>
+                        <p>Defining vision, goals, and roadmap for product success in competitive markets.</p>
+                        <ul class="phase-features">
+                            <li><i class="ri-check-line"></i> Market Research & Analysis</li>
+                            <li><i class="ri-check-line"></i> Competitive Analysis</li>
+                            <li><i class="ri-check-line"></i> User Persona Development</li>
+                            <li><i class="ri-check-line"></i> Product Roadmapping</li>
+                        </ul>
+                        <a href="#" class="phase-link">
+                            Learn More <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <!-- Design Phase -->
+                    <div class="phase-card" id="development">
+                        <div class="phase-number">02</div>
+                        <h3>Design & Prototyping</h3>
+                        <p>Creating intuitive interfaces and interactive prototypes to validate concepts.</p>
+                        <ul class="phase-features">
+                            <li><i class="ri-check-line"></i> UX/UI Design</li>
+                            <li><i class="ri-check-line"></i> Interactive Prototyping</li>
+                            <li><i class="ri-check-line"></i> Design Systems</li>
+                            <li><i class="ri-check-line"></i> User Testing</li>
+                        </ul>
+                        <a href="#" class="phase-link">
+                            Learn More <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <!-- Development Phase -->
+                    <div class="phase-card">
+                        <div class="phase-number">03</div>
+                        <h3>Development</h3>
+                        <p>Collaborating with engineering teams to bring designs to life with quality code.</p>
+                        <ul class="phase-features">
+                            <li><i class="ri-check-line"></i> Frontend Development</li>
+                            <li><i class="ri-check-line"></i> Backend Integration</li>
+                            <li><i class="ri-check-line"></i> Quality Assurance</li>
+                            <li><i class="ri-check-line"></i> Performance Optimization</li>
+                        </ul>
+                        <a href="#" class="phase-link">
+                            Learn More <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <!-- Launch Phase -->
+                    <div class="phase-card" id="launch">
+                        <div class="phase-number">04</div>
+                        <h3>Launch & Scale</h3>
+                        <p>Successfully launching products and optimizing for growth and scalability.</p>
+                        <ul class="phase-features">
+                            <li><i class="ri-check-line"></i> Launch Strategy</li>
+                            <li><i class="ri-check-line"></i> User Onboarding</li>
+                            <li><i class="ri-check-line"></i> Analytics & Monitoring</li>
+                            <li><i class="ri-check-line"></i> Growth Optimization</li>
+                        </ul>
+                        <a href="#" class="phase-link">
+                            Learn More <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Methodology -->
+        <section class="product-methodology">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 class="section-title">Our Product Design Methodology</h2>
+                    <p class="section-subtitle">A proven framework for building successful digital products</p>
+                </div>
+
+                <div class="methodology-timeline">
+                    <div class="methodology-step">
+                        <div class="methodology-icon">
+                            <i class="ri-lightbulb-line"></i>
+                        </div>
+                        <div class="methodology-content">
+                            <h4>Ideation & Discovery</h4>
+                            <p>Brainstorming ideas, validating concepts, and understanding user needs and market opportunities.</p>
+                        </div>
+                        <div class="methodology-connector"></div>
+                    </div>
+                    <div class="methodology-step">
+                        <div class="methodology-icon">
+                            <i class="ri-user-search-line"></i>
+                        </div>
+                        <div class="methodology-content">
+                            <h4>Research & Validation</h4>
+                            <p>Conducting user research, competitive analysis, and validating assumptions through testing.</p>
+                        </div>
+                        <div class="methodology-connector"></div>
+                    </div>
+                    <div class="methodology-step">
+                        <div class="methodology-icon">
+                            <i class="ri-palette-line"></i>
+                        </div>
+                        <div class="methodology-content">
+                            <h4>Design & Prototyping</h4>
+                            <p>Creating wireframes, prototypes, and design systems based on research insights.</p>
+                        </div>
+                        <div class="methodology-connector"></div>
+                    </div>
+                    <div class="methodology-step">
+                        <div class="methodology-icon">
+                            <i class="ri-code-line"></i>
+                        </div>
+                        <div class="methodology-content">
+                            <h4>Development & Testing</h4>
+                            <p>Building the product with quality code and conducting thorough testing at every stage.</p>
+                        </div>
+                        <div class="methodology-connector"></div>
+                    </div>
+                    <div class="methodology-step">
+                        <div class="methodology-icon">
+                            <i class="ri-rocket-line"></i>
+                        </div>
+                        <div class="methodology-content">
+                            <h4>Launch & Optimization</h4>
+                            <p>Launching to market, gathering feedback, and continuously optimizing for growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Services -->
+        <section class="product-services">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 class="section-title">Product Design Services</h2>
+                    <p class="section-subtitle">Comprehensive services for every stage of product development</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h4>MVP Design & Development</h4>
+                        <p>Design and build minimum viable products to validate ideas and secure funding quickly.</p>
+                        <div class="service-duration">4-6 Weeks</div>
+                    </div>
+                    <div class="service-item">
+                        <h4>Product Strategy Consulting</h4>
+                        <p>Expert guidance on product vision, positioning, and roadmap development.</p>
+                        <div class="service-duration">Ongoing</div>
+                    </div>
+                    <div class="service-item">
+                        <h4>Design Systems</h4>
+                        <p>Create scalable design systems for consistency and efficiency across products.</p>
+                        <div class="service-duration">2-4 Weeks</div>
+                    </div>
+                    <div class="service-item">
+                        <h4>User Research & Testing</h4>
+                        <p>Comprehensive user research and testing to inform product decisions.</p>
+                        <div class="service-duration">1-2 Weeks</div>
+                    </div>
+                    <div class="service-item">
+                        <h4>Launch Strategy & Support</h4>
+                        <p>Complete launch planning and post-launch support for successful market entry.</p>
+                        <div class="service-duration">2-3 Weeks</div>
+                    </div>
+                    <div class="service-item">
+                        <h4>Product Growth Optimization</h4>
+                        <p>Data-driven optimization strategies to grow and scale your product.</p>
+                        <div class="service-duration">Ongoing</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="product-cta">
+            <div class="container">
+                <h2>Build Your Digital Product</h2>
+                <p>Ready to turn your product idea into reality? Partner with experts who understand the complete product lifecycle.</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-primary large">
+                        <span>Start Product Journey</span>
+                        <i class="ri-rocket-fill"></i>
+                    </a>
+                    <a href="case-studies-header.html" class="btn-secondary large">
+                        <span>View Product Work</span>
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+           <footer class="main-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <a href="index.html" class="footer-logo">LAZAREV.</a>
+                        <p class="footer-tagline">Digital Product Design Agency</p>
+                        <p class="footer-description">Transforming ideas into exceptional digital experiences through strategic design and innovation.</p>
+                        <div class="footer-social">
+                            <a href="https://twitter.com/lazarevagency" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-twitter-fill"></i></a>
+                            <a href="https://www.linkedin.com/company/lazarev-agency" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill"></i></a>
+                            <a href="https://dribbble.com/lazarev" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-dribbble-fill"></i></a>
+                            <a href="https://www.behance.net/lazarev" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-behance-fill"></i></a>
+                            <a href="https://www.instagram.com/lazarev.agency" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-fill"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="uiux-design-header.html">UI/UX Design</a></li>
+                            <li><a href="product-design-header.html">Product Design</a></li>
+                            <li><a href="expertise-header.html#ai">AI & ML Design</a></li>
+                            <li><a href="expertise-header.html#fintech">Fintech Solutions</a></li>
+                            <li><a href="expertise-header.html#web3">Web 3.0 Design</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="case-studies-header.html">Case Studies</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                     
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <div class="contact-info">
+                            <p><i class="ri-mail-line"></i> hello@lazarev.agency</p>
+                            <p><i class="ri-phone-line"></i> +1 (415) 555-0139</p>
+                            <p><i class="ri-map-pin-line"></i> San Francisco, CA</p>
+                        </div>
+                        <div class="newsletter">
+                            <h5>Stay Updated</h5>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="Your email address">
+                                <button type="submit">
+                                    <i class="ri-send-plane-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2024 LAZAREV. All rights reserved.</p>
+                 
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-container">
+            <button class="modal-close">
+                <i class="ri-close-line"></i>
+            </button>
+            <div class="modal-content">
+                <h2>Start Your Project</h2>
+                <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Company">
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Project Type</option>
+                            <option value="uiux">UI/UX Design</option>
+                            <option value="product">Product Design</option>
+                            <option value="ai">AI & ML</option>
+                            <option value="fintech">Fintech</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us about your project..." rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox">
+                            <input type="checkbox" required>
+                            <span>I agree to receive updates and marketing communications</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <i class="ri-send-plane-fill"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- Phase Detail Modals -->
+    <div id="phaseModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="modalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+    <script src="header-script.js"></script>
+    <script>
+        // Phase modal functionality
+        const phaseModal = document.getElementById('phaseModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalContent = document.getElementById('modalContent');
+
+        // Phase details data
+        const phaseDetails = {
+            'strategy': {
+                title: 'Product Strategy',
+                content: `
+                    <div class="phase-detail">
+                        <h3>Market Research & Analysis</h3>
+                        <p>We conduct comprehensive market research to understand industry trends, user needs, and competitive landscape. This includes:</p>
+                        <ul>
+                            <li>Market size and growth analysis</li>
+                            <li>Competitor benchmarking</li>
+                            <li>User behavior studies</li>
+                            <li>Technology trend assessment</li>
+                        </ul>
+
+                        <h3>Competitive Analysis</h3>
+                        <p>Deep dive into competitor offerings, strengths, weaknesses, and market positioning to identify opportunities for differentiation.</p>
+
+                        <h3>User Persona Development</h3>
+                        <p>Create detailed user personas based on research data to guide design and product decisions.</p>
+
+                        <h3>Product Roadmapping</h3>
+                        <p>Develop strategic product roadmap with clear milestones, feature prioritization, and timeline planning.</p>
+                    </div>
+                `
+            },
+            'design': {
+                title: 'Design & Prototyping',
+                content: `
+                    <div class="phase-detail">
+                        <h3>UX/UI Design</h3>
+                        <p>Create intuitive and beautiful user interfaces that balance aesthetics with functionality.</p>
+                        <ul>
+                            <li>User flow mapping</li>
+                            <li>Wireframe creation</li>
+                            <li>Visual design</li>
+                            <li>Interaction design</li>
+                        </ul>
+
+                        <h3>Interactive Prototyping</h3>
+                        <p>Build clickable prototypes to test and validate design concepts before development.</p>
+
+                        <h3>Design Systems</h3>
+                        <p>Establish scalable design systems for consistency across all product touchpoints.</p>
+
+                        <h3>User Testing</h3>
+                        <p>Conduct usability testing sessions to gather feedback and iterate on designs.</p>
+                    </div>
+                `
+            },
+            'development': {
+                title: 'Development',
+                content: `
+                    <div class="phase-detail">
+                        <h3>Frontend Development</h3>
+                        <p>Build responsive, performant frontend applications using modern technologies and best practices.</p>
+
+                        <h3>Backend Integration</h3>
+                        <p>Develop robust backend systems and APIs to support frontend functionality.</p>
+
+                        <h3>Quality Assurance</h3>
+                        <p>Comprehensive testing including unit tests, integration tests, and end-to-end testing.</p>
+
+                        <h3>Performance Optimization</h3>
+                        <p>Optimize application performance for speed, scalability, and user experience.</p>
+                    </div>
+                `
+            },
+            'launch': {
+                title: 'Launch & Scale',
+                content: `
+                    <div class="phase-detail">
+                        <h3>Launch Strategy</h3>
+                        <p>Develop comprehensive launch plan including marketing, user acquisition, and go-to-market strategy.</p>
+
+                        <h3>User Onboarding</h3>
+                        <p>Create seamless onboarding experiences to help users understand and adopt your product.</p>
+
+                        <h3>Analytics & Monitoring</h3>
+                        <p>Implement analytics tracking and monitoring systems to measure product performance.</p>
+
+                        <h3>Growth Optimization</h3>
+                        <p>Data-driven optimization strategies to improve user engagement and business metrics.</p>
+                    </div>
+                `
+            }
+        };
+
+        // Add click event listeners to phase links
+        document.querySelectorAll('.phase-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const phaseCard = this.closest('.phase-card');
+                const phaseTitle = phaseCard.querySelector('h3').textContent.toLowerCase();
+
+                let phaseKey = 'strategy'; // default
+                if (phaseTitle.includes('design & prototyping')) phaseKey = 'design';
+                else if (phaseTitle.includes('development')) phaseKey = 'development';
+                else if (phaseTitle.includes('launch & scale')) phaseKey = 'launch';
+
+                openModal(phaseKey);
+            });
+        });
+
+        function openModal(phaseKey) {
+            const phase = phaseDetails[phaseKey];
+            if (phase) {
+                modalTitle.textContent = phase.title;
+                modalContent.innerHTML = phase.content;
+                phaseModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal() {
+            phaseModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        phaseModal.addEventListener('click', function(e) {
+            if (e.target === phaseModal) {
+                closeModal();
+            }
+        });
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && phaseModal.style.display === 'block') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expertise - LAZAREV. Digital Product Design Agency</title>
+    <link rel="shortcut icon" href="https://assets-global.website-files.com/64a2ab71942e1d57feb6fe39/6528221f95333ff155d01ad2_fav.gif" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header-styles.css">
+    <style>
+        .expertise-header {
+            background: linear-gradient(135deg, rgba(79, 91, 255, 0.1) 0%, var(--bg-primary) 100%);
+            min-height: 70vh;
+            padding: 4rem 2rem 4rem;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expertise-hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .expertise-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(79, 91, 255, 0.15);
+            border: 1px solid rgba(79, 91, 255, 0.3);
+            border-radius: 20px;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4f5bff;
+            margin-bottom: 2rem;
+        }
+
+        .expertise-hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .expertise-hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        .expertise-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .expertise-stat-item {
+            text-align: center;
+        }
+
+        .expertise-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #4f5bff 0%, #0BA34E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .expertise-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .expertise-categories {
+            padding: 6rem 2rem;
+            background: var(--bg-secondary);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            background: rgba(25, 25, 25, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(79, 91, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(79, 91, 255, 0.1);
+            border: 1px solid rgba(79, 91, 255, 0.2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #4f5bff;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-card p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .category-features {
+            list-style: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .category-features li {
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .category-features li i {
+            color: #4f5bff;
+            font-size: 1rem;
+        }
+
+        .category-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4f5bff;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: gap 0.3s ease;
+        }
+
+        .category-link:hover {
+            gap: 0.75rem;
+        }
+
+        .expertise-process {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(11, 163, 78, 0.1), rgba(17, 17, 17, 1));
+        }
+
+        .process-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .process-step-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .process-step-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(79, 91, 255, 0.3);
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #4f5bff 0%, #0BA34E 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .process-step-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .expertise-cta {
+            padding: 6rem 2rem;
+            background: #111;
+            text-align: center;
+        }
+
+        .expertise-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .expertise-cta p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .expertise-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .expertise-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .expertise-cta h2 {
+                font-size: 2.25rem;
+            }
+        }
+
+        /* Expertise Modal Styles */
+        .expertise-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .expertise-modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
+            margin: 5% auto;
+            padding: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .expertise-modal-header {
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .expertise-modal-title {
+            font-size: 2rem;
+            margin: 0;
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .expertise-modal-close {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-modal-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .expertise-modal-body {
+            padding: 2rem;
+        }
+
+        .expertise-modal-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .expertise-modal-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .expertise-modal-detail-item {
+            text-align: center;
+        }
+
+        .expertise-modal-detail-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #4f5bff 0%, #0BA34E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .expertise-modal-detail-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .expertise-modal-features {
+            margin-top: 2rem;
+        }
+
+        .expertise-modal-features h4 {
+            color: #4f5bff;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-modal-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .expertise-modal-features li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .expertise-modal-features li::before {
+            content: "✓";
+            color: #4f5bff;
+            position: absolute;
+            left: 0;
+        }
+
+        .expertise-modal-projects {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .expertise-modal-projects h4 {
+            color: #4f5bff;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-modal-projects ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .expertise-modal-projects li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .expertise-modal-projects li::before {
+            content: "•";
+            color: #4f5bff;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Professional Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="index.html" class="brand-logo">
+                    <div class="logo-wrapper">
+                        <span class="logo-main">LAZAREV</span>
+                        <span class="logo-dot">.</span>
+                        <div class="logo-badge">
+                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                <path fill="currentColor" d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="logo-tagline">Expertise</span>
+                </a>
+            </div>
+
+            <!-- Main Navigation -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-home-4-line"></i></span>
+                            <span class="nav-text">Home</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="case-studies-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-folders-line"></i></span>
+                            <span class="nav-text">Case Studies</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="expertise-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-lightbulb-flash-line"></i></span>
+                            <span class="nav-text">Expertise</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <ul>
+                                <li><a href="#ai"><i class="ri-robot-line"></i>AI & ML Design</a></li>
+                                <li><a href="#fintech"><i class="ri-bank-card-line"></i>Fintech Solutions</a></li>
+                                <li><a href="#web3"><i class="ri-global-line"></i>Web 3.0</a></li>
+                                <li><a href="#ecommerce"><i class="ri-store-line"></i>E-commerce</a></li>
+                                <li><a href="#saas"><i class="ri-cloud-line"></i>SaaS Design</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="uiux-design-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-palette-line"></i></span>
+                            <span class="nav-text">UI/UX Design</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="product-design-header.html" class="nav-link">
+                            <span class="nav-icon"><i class="ri-cpu-line"></i></span>
+                            <span class="nav-text">Product Design</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="contact.html" class="contact-btn">
+                    <span>Contact</span>
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
+                <button class="header-cta" id="headerCta">
+                    <span>Start Project</span>
+                    <i class="ri-flashlight-line"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb-nav">
+            <div class="breadcrumb-container">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Expertise</li>
+                    </ol>
+                </nav>
+                <div class="breadcrumb-actions">
+                    <button class="scroll-top" aria-label="Scroll to top">
+                        <i class="ri-arrow-up-line"></i>
+                    </button>
+                    <div class="current-time">
+                        <i class="ri-time-line"></i>
+                        <span id="currentTime"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay"></div>
+    <nav class="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="mobile-logo">LAZAREV.</a>
+            <button class="mobile-menu-close">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav">
+                <li><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
+                <li><a href="case-studies-header.html"><i class="ri-folders-line"></i> Case Studies</a></li>
+                <li><a href="expertise-header.html" class="active"><i class="ri-lightbulb-flash-line"></i> Expertise</a></li>
+                <li><a href="uiux-design-header.html"><i class="ri-palette-line"></i> UI/UX Design</a></li>
+                <li><a href="product-design-header.html"><i class="ri-cpu-line"></i> Product Design</a></li>
+                <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <a href="contact.html" class="mobile-cta">Start a Project</a>
+                <div class="mobile-social">
+                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                    <a href="#"><i class="ri-linkedin-fill"></i></a>
+                    <a href="#"><i class="ri-dribbble-fill"></i></a>
+                    <a href="#"><i class="ri-behance-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="main">
+        <!-- Expertise Header -->
+        <section class="expertise-header">
+            <div class="expertise-hero">
+                <div class="expertise-badge">
+                    <i class="ri-lightbulb-flash-fill"></i>
+                    Specialized Solutions
+                </div>
+                <h1>Our Expertise</h1>
+                <p>Deep specialization in cutting-edge technologies and industries. We combine technical expertise with design excellence to create products that users love and businesses rely on.</p>
+                <div class="expertise-stats">
+                    <div class="expertise-stat-item">
+                        <div class="expertise-stat-number">8+</div>
+                        <div class="expertise-stat-label">Years Experience</div>
+                    </div>
+                    <div class="expertise-stat-item">
+                        <div class="expertise-stat-number">15+</div>
+                        <div class="expertise-stat-label">Industries Served</div>
+                    </div>
+                    <div class="expertise-stat-item">
+                        <div class="expertise-stat-number">50+</div>
+                        <div class="expertise-stat-label">Technology Experts</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Categories -->
+        <section class="expertise-categories" id="ai">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 class="section-title">Specialized Expertise Areas</h2>
+                    <p class="section-subtitle">Deep knowledge in emerging technologies and industries</p>
+                </div>
+
+                <div class="category-grid">
+                    <!-- AI & ML -->
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="ri-robot-line"></i>
+                        </div>
+                        <h3>AI & Machine Learning</h3>
+                        <p>Designing intuitive interfaces for complex AI systems that users can trust and understand. We make AI accessible and usable.</p>
+                        <ul class="category-features">
+                            <li><i class="ri-check-line"></i> AI Interface Design</li>
+                            <li><i class="ri-check-line"></i> ML Model Visualization</li>
+                            <li><i class="ri-check-line"></i> Predictive Analytics Dashboards</li>
+                            <li><i class="ri-check-line"></i> Natural Language Processing</li>
+                        </ul>
+                        <a href="#" class="category-link">
+                            Explore AI Projects <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <!-- Fintech -->
+                    <div class="category-card" id="fintech">
+                        <div class="category-icon">
+                            <i class="ri-bank-card-line"></i>
+                        </div>
+                        <h3>Fintech Solutions</h3>
+                        <p>Creating secure, compliant, and user-friendly financial products that drive adoption and trust in digital finance.</p>
+                        <ul class="category-features">
+                            <li><i class="ri-check-line"></i> Banking & Payment Systems</li>
+                            <li><i class="ri-check-line"></i> Investment Platforms</li>
+                            <li><i class="ri-check-line"></i> Cryptocurrency Wallets</li>
+                            <li><i class="ri-check-line"></i> Risk Management Tools</li>
+                        </ul>
+                        <a href="#" class="category-link">
+                            View Fintech Work <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <!-- Web 3.0 -->
+                    <div class="category-card" id="web3">
+                        <div class="category-icon">
+                            <i class="ri-global-line"></i>
+                        </div>
+                        <h3>Web 3.0 & Blockchain</h3>
+                        <p>Designing decentralized applications with intuitive user experiences for the next generation of the internet.</p>
+                        <ul class="category-features">
+                            <li><i class="ri-check-line"></i> NFT Marketplaces</li>
+                            <li><i class="ri-check-line"></i> DeFi Applications</li>
+                            <li><i class="ri-check-line"></i> DAO Platforms</li>
+                            <li><i class="ri-check-line"></i> Smart Contract Interfaces</li>
+                        </ul>
+                        <a href="#" class="category-link">
+                            Explore Web 3.0 <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <!-- E-commerce -->
+                    <div class="category-card" id="ecommerce">
+                        <div class="category-icon">
+                            <i class="ri-store-line"></i>
+                        </div>
+                        <h3>E-commerce Design</h3>
+                        <p>Creating seamless shopping experiences that convert visitors into loyal customers across all devices.</p>
+                        <ul class="category-features">
+                            <li><i class="ri-check-line"></i> Shopping Platforms</li>
+                            <li><i class="ri-check-line"></i> Marketplace Design</li>
+                            <li><i class="ri-check-line"></i> AR Product Visualization</li>
+                            <li><i class="ri-check-line"></i> Checkout Optimization</li>
+                        </ul>
+                        <a href="#" class="category-link">
+                            View E-commerce Work <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <!-- SaaS -->
+                    <div class="category-card" id="saas">
+                        <div class="category-icon">
+                            <i class="ri-cloud-line"></i>
+                        </div>
+                        <h3>SaaS Product Design</h3>
+                        <p>Designing scalable software solutions that grow with your business and adapt to user needs.</p>
+                        <ul class="category-features">
+                            <li><i class="ri-check-line"></i> Enterprise Software</li>
+                            <li><i class="ri-check-line"></i> B2B Platforms</li>
+                            <li><i class="ri-check-line"></i> Productivity Tools</li>
+                            <li><i class="ri-check-line"></i> Analytics Dashboards</li>
+                        </ul>
+                        <a href="#" class="category-link">
+                            Explore SaaS Design <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <!-- Healthcare -->
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="ri-heart-pulse-line"></i>
+                        </div>
+                        <h3>Healthcare Tech</h3>
+                        <p>Designing compliant, accessible, and life-changing healthcare technology solutions.</p>
+                        <ul class="category-features">
+                            <li><i class="ri-check-line"></i> Medical Software</li>
+                            <li><i class="ri-check-line"></i> Health Monitoring Apps</li>
+                            <li><i class="ri-check-line"></i> Telemedicine Platforms</li>
+                            <li><i class="ri-check-line"></i> Medical Device Interfaces</li>
+                        </ul>
+                        <a href="#" class="category-link">
+                            View Healthcare Work <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Process -->
+        <section class="expertise-process">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 class="section-title">Our Expertise Methodology</h2>
+                    <p class="section-subtitle">How we apply our specialized knowledge to deliver exceptional results</p>
+                </div>
+
+                <div class="process-steps-grid">
+                    <div class="process-step-card">
+                        <div class="step-number">01</div>
+                        <h4>Industry Analysis</h4>
+                        <p>Deep dive into your industry landscape, competitors, and user expectations</p>
+                    </div>
+                    <div class="process-step-card">
+                        <div class="step-number">02</div>
+                        <h4>Technology Assessment</h4>
+                        <p>Evaluate current technologies and identify opportunities for innovation</p>
+                    </div>
+                    <div class="process-step-card">
+                        <div class="step-number">03</div>
+                        <h4>Solution Design</h4>
+                        <p>Create tailored solutions leveraging our specialized expertise</p>
+                    </div>
+                    <div class="process-step-card">
+                        <div class="step-number">04</div>
+                        <h4>Implementation</h4>
+                        <p>Execute with precision using industry-best practices and tools</p>
+                    </div>
+                    <div class="process-step-card">
+                        <div class="step-number">05</div>
+                        <h4>Optimization</h4>
+                        <p>Continuously improve based on data and user feedback</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="expertise-cta">
+            <div class="container">
+                <h2>Leverage Our Expertise</h2>
+                <p>Partner with specialists who understand your industry and technology challenges. Let's build something exceptional together.</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-primary large">
+                        <span>Consult Our Experts</span>
+                        <i class="ri-user-star-line"></i>
+                    </a>
+                    <a href="case-studies-header.html" class="btn-secondary large">
+                        <span>See Our Work</span>
+                        <i class="ri-eye-line"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <a href="index.html" class="footer-logo">LAZAREV.</a>
+                        <p class="footer-tagline">Digital Product Design Agency</p>
+                        <p class="footer-description">Transforming ideas into exceptional digital experiences through strategic design and innovation.</p>
+                        <div class="footer-social">
+                            <a href="https://twitter.com/lazarevagency" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-twitter-fill"></i></a>
+                            <a href="https://www.linkedin.com/company/lazarev-agency" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill"></i></a>
+                            <a href="https://dribbble.com/lazarev" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-dribbble-fill"></i></a>
+                            <a href="https://www.behance.net/lazarev" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-behance-fill"></i></a>
+                            <a href="https://www.instagram.com/lazarev.agency" class="social-link" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-fill"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="uiux-design-header.html">UI/UX Design</a></li>
+                            <li><a href="product-design-header.html">Product Design</a></li>
+                            <li><a href="expertise-header.html#ai">AI & ML Design</a></li>
+                            <li><a href="expertise-header.html#fintech">Fintech Solutions</a></li>
+                            <li><a href="expertise-header.html#web3">Web 3.0 Design</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="case-studies-header.html">Case Studies</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                     
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <div class="contact-info">
+                            <p><i class="ri-mail-line"></i> hello@lazarev.agency</p>
+                            <p><i class="ri-phone-line"></i> +1 (415) 555-0139</p>
+                            <p><i class="ri-map-pin-line"></i> San Francisco, CA</p>
+                        </div>
+                        <div class="newsletter">
+                            <h5>Stay Updated</h5>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="Your email address">
+                                <button type="submit">
+                                    <i class="ri-send-plane-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2024 LAZAREV. All rights reserved.</p>
+                 
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-container">
+            <button class="modal-close">
+                <i class="ri-close-line"></i>
+            </button>
+            <div class="modal-content">
+                <h2>Start Your Project</h2>
+                <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Company">
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Project Type</option>
+                            <option value="uiux">UI/UX Design</option>
+                            <option value="product">Product Design</option>
+                            <option value="ai">AI & ML</option>
+                            <option value="fintech">Fintech</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us about your project..." rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox">
+                            <input type="checkbox" required>
+                            <span>I agree to receive updates and marketing communications</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <i class="ri-send-plane-fill"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- Expertise Modal -->
+    <div id="expertiseModal" class="expertise-modal">
+        <div class="expertise-modal-content">
+            <div class="expertise-modal-header">
+                <h2 id="expertiseModalTitle" class="expertise-modal-title"></h2>
+                <button class="expertise-modal-close" onclick="closeExpertiseModal()">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <div class="expertise-modal-body">
+                <p id="expertiseModalDescription" class="expertise-modal-description"></p>
+
+                <div class="expertise-modal-details">
+                    <div class="expertise-modal-detail-item">
+                        <div class="expertise-modal-detail-number" id="expertiseModalProjects">15+</div>
+                        <div class="expertise-modal-detail-label">Projects Completed</div>
+                    </div>
+                    <div class="expertise-modal-detail-item">
+                        <div class="expertise-modal-detail-number" id="expertiseModalClients">50+</div>
+                        <div class="expertise-modal-detail-label">Happy Clients</div>
+                    </div>
+                    <div class="expertise-modal-detail-item">
+                        <div class="expertise-modal-detail-number" id="expertiseModalYears">8+</div>
+                        <div class="expertise-modal-detail-label">Years Experience</div>
+                    </div>
+                </div>
+
+                <div class="expertise-modal-features">
+                    <h4>Key Capabilities</h4>
+                    <ul id="expertiseModalFeatures"></ul>
+                </div>
+
+                <div class="expertise-modal-projects">
+                    <h4>Featured Projects</h4>
+                    <ul id="expertiseModalProjectsList"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+    <script src="header-script.js"></script>
+    <script>
+        // Expertise Modal Functionality
+        function openExpertiseModal(title, description, features, projects) {
+            document.getElementById('expertiseModalTitle').textContent = title;
+            document.getElementById('expertiseModalDescription').textContent = description;
+
+            const featuresList = document.getElementById('expertiseModalFeatures');
+            featuresList.innerHTML = '';
+            features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+
+            const projectsList = document.getElementById('expertiseModalProjectsList');
+            projectsList.innerHTML = '';
+            projects.forEach(project => {
+                const li = document.createElement('li');
+                li.textContent = project;
+                projectsList.appendChild(li);
+            });
+
+            document.getElementById('expertiseModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeExpertiseModal() {
+            document.getElementById('expertiseModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('expertiseModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeExpertiseModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && document.getElementById('expertiseModal').style.display === 'block') {
+                closeExpertiseModal();
+            }
+        });
+
+        // Add click handlers to category links
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryLinks = document.querySelectorAll('.category-link');
+
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const card = this.closest('.category-card');
+                    const title = card.querySelector('h3').textContent;
+                    const description = card.querySelector('p').textContent;
+                    const features = Array.from(card.querySelectorAll('.category-features li')).map(li =>
+                        li.textContent.replace('✓ ', '').trim()
+                    );
+
+                    // Define projects based on category
+                    const projectsData = {
+                        'AI & Machine Learning': [
+                            'Neural Network Visualization Platform',
+                            'AI-Powered Analytics Dashboard',
+                            'Machine Learning Model Marketplace',
+                            'Conversational AI Interface'
+                        ],
+                        'Fintech Solutions': [
+                            'Cryptocurrency Trading Platform',
+                            'Digital Banking Mobile App',
+                            'Investment Portfolio Manager',
+                            'Payment Gateway Integration'
+                        ],
+                        'Web 3.0 & Blockchain': [
+                            'NFT Marketplace Platform',
+                            'DeFi Protocol Interface',
+                            'DAO Governance Dashboard',
+                            'Smart Contract Wallet'
+                        ],
+                        'E-commerce Design': [
+                            'Multi-vendor Marketplace',
+                            'AR Product Visualization App',
+                            'Subscription Box Platform',
+                            'Mobile Commerce Solution'
+                        ],
+                        'SaaS Product Design': [
+                            'Project Management Tool',
+                            'CRM Analytics Platform',
+                            'Collaboration Workspace',
+                            'Business Intelligence Dashboard'
+                        ],
+                        'Healthcare Tech': [
+                            'Telemedicine Platform',
+                            'Health Monitoring App',
+                            'Medical Records System',
+                            'Patient Management Portal'
+                        ]
+                    };
+
+                    const projects = projectsData[title] || [
+                        'Custom Solution Development',
+                        'Platform Architecture Design',
+                        'User Experience Optimization',
+                        'Technology Integration'
+                    ];
+
+                    openExpertiseModal(title, description, features, projects);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
